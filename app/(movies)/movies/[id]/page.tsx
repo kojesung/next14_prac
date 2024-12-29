@@ -8,5 +8,5 @@ export default async function MovieDetails({
     const urlParams = await params;
     const urlSearchParams = await searchParams;
     console.log(urlParams, urlSearchParams);
-    return <h1>Movie Details</h1>;
+    return <h1>Movie {urlParams.id}</h1>;
 }
