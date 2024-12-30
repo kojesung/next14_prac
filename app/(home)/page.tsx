@@ -1,20 +1,16 @@
-'use client';
+export const metadata = {
+    title: 'Home',
+};
 
-import { useEffect, useState } from 'react';
+const URL = 'https://nomad-movies.nomadcoders.workers.dev'; // 변수가 꼭 컴포넌트 내부에 있지 않아도 됨
 
-export default function Page() {
-    const URL = 'https://nomad-movies.nomadcoders.workers.dev';
-    const [isLoading, setIsLoading] = useState(true);
-    const [movies, setMovies] = useState([]);
-    const getMovies = async () => {
-        const response = await fetch(URL + '/movies');
-        const json = await response.json(); // response.json()은 Promise반환
-        setMovies(json);
-        setIsLoading(false);
-    };
-    useEffect(() => {
-        getMovies();
-    }, []);
+const getMovie = async () => {
+    const response = await fetch(URL + '/movies');
+    const json = await response.json();
+    return json;
+};
 
-    return <div>{isLoading ? <div>Loading...</div> : JSON.stringify(movies)}</div>;
+export default async function Page() {
+    const movies = await getMovie();
+    return <div>{JSON.stringify(movies)}</div>;
 }
