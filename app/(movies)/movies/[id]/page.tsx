@@ -8,10 +8,10 @@ export default async function MovieDetails({ params }: { params: { id: string } 
     const urlParams = await params;
     return (
         <div>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div>Loading Movie Info</div>}>
                 <MovieInfo id={urlParams.id}></MovieInfo>
             </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div>Loading Movie Video</div>}>
                 <MovieVideo id={urlParams.id}></MovieVideo>
             </Suspense>
         </div>
