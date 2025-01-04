@@ -1,7 +1,7 @@
 import { decodeFormState } from 'next/dist/server/app-render/entry-base';
 import { API_URL } from '../../../(home)/page';
 import { Suspense } from 'react';
-import MovieInfo from '../../../../components/movie-info';
+import MovieInfo from '../../../../components/movie-info/movie-info';
 import MovieVideo from '../../../../components/movie-video';
 
 export default async function MovieDetails({ params }: { params: { id: string } }) {
