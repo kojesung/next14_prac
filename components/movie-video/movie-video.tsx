@@ -18,7 +18,7 @@ export default async function MovieVideo({ id }: { id: string }) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     title={video.title}
-                ></iframe>
+                />
             ))}
         </div>
     );
