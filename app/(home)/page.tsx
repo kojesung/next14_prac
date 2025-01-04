@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import Movie from '../../components/movie/movie';
 import styles from './home.module.css';
+import { API_URL } from '../constants';
 
 export const metadata = {
     title: 'Home',
 };
-
-export const API_URL = 'https://nomad-movies.nomadcoders.workers.dev'; // 다른 파일에서 사용할 수 있도록 export
 
 const getMovie = async () => {
     const response = await fetch(API_URL + '/movies');
