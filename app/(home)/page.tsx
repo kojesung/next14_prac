@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Movie from '../../components/movie';
+import Movie from '../../components/movie/movie';
 
 export const metadata = {
     title: 'Home',
